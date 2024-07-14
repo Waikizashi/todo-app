@@ -1,9 +1,9 @@
-import { TodoList } from '@/services/TodoService';
+import { TodoListResponseDto } from '@/services/TodoService';
 import React from 'react';
 import { ListGroup } from 'react-bootstrap';
 
 interface TodoListsProps {
-    lists: TodoList[];
+    lists: TodoListResponseDto[];
     onSelectList: (listName: string) => void;
 }
 
@@ -16,7 +16,7 @@ const TodoLists: React.FC<TodoListsProps> = ({ lists, onSelectList }) => {
                     action
                     onClick={() => onSelectList(list.id)}
                 >
-                    {list.name}
+                    {list.listName}
                 </ListGroup.Item>
             ))}
         </ListGroup>

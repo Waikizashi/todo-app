@@ -8,7 +8,8 @@ import TodoLists from "@/components/TodoLists";
 import { RootState, AppDispatch } from '@/store/store';
 import { fetchTodosByListId, fetchTodoLists, addTodo, updateTodo, deleteTodo, selectList, clearSelectedList } from '@/store/todoSlice';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import { Todo } from '@/services/TodoService';
+import {Todo, TodoListRequestDto} from '@/services/TodoService';
+import TodoListForm from "@/components/TodoListForm";
 
 export default function Home() {
   const dispatch = useDispatch<AppDispatch>();
@@ -28,6 +29,9 @@ export default function Home() {
     dispatch(selectList(listId));
   };
 
+  const handleAddTodoList = (newTodoList: TodoListRequestDto) => {
+    dispatch(addTodoList(newTodoList));
+  };
   const handleAddTodo = (newTodo: Todo) => {
     dispatch(addTodo(newTodo));
   };
@@ -60,7 +64,10 @@ export default function Home() {
             />
           </>
         ) : (
-          <TodoLists lists={todoLists} onSelectList={handleSelectList} />
+            <>
+              <TodoListForm onAdd={handleAddTodoList}/>
+              <TodoLists lists={todoLists} onSelectList={handleSelectList} />
+            </>
         )}
       </Card>
     </main>

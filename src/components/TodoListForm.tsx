@@ -1,9 +1,9 @@
 import React, { useState, FormEvent } from 'react';
 import { Form, Button } from 'react-bootstrap';
-import { Todo, TodoList } from '../services/TodoService';
+import {Todo, TodoListRequestDto,} from '../services/TodoService';
 
 interface TodoListFormProps {
-  onAdd: (lsit: TodoList) => void;
+  onAdd: (list: TodoListRequestDto) => void;
 }
 
 const TodoListForm: React.FC<TodoListFormProps> = ({ onAdd }) => {
@@ -11,7 +11,7 @@ const TodoListForm: React.FC<TodoListFormProps> = ({ onAdd }) => {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    onAdd({ listName });
+    onAdd({listName: text});
     setText('');
   };
 
@@ -32,4 +32,4 @@ const TodoListForm: React.FC<TodoListFormProps> = ({ onAdd }) => {
   );
 };
 
-export default TodoForm;
+export default TodoListForm;

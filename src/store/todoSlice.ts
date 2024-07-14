@@ -1,9 +1,9 @@
-import { createSlice, PayloadAction, createAsyncThunk } from '@reduxjs/toolkit';
-import TodoService, { Todo, TodoList } from '../services/TodoService';
+import {createAsyncThunk, createSlice, PayloadAction} from '@reduxjs/toolkit';
+import TodoService, {Todo, TodoListResponseDto} from '../services/TodoService';
 
 interface TodoState {
     todos: Todo[];
-    todoLists: TodoList[];
+    todoLists: TodoListResponseDto[];
     selectedList: string | null;
     loading: boolean;
     error: string | null;
@@ -18,23 +18,19 @@ const initialState: TodoState = {
 };
 
 export const fetchTodosByListId = createAsyncThunk<Todo[], string>('todos/fetchTodosByListId', async (listId) => {
-    const todos = await TodoService.getTodosByListId(listId);
-    return todos;
+    return await TodoService.getTodosByListId(listId);
 });
 
-export const fetchTodoLists = createAsyncThunk<TodoList[]>('todolists/fetchTodoLists', async () => {
-    const todoLists = await TodoService.getTodoLists();
-    return todoLists;
+export const fetchTodoLists = createAsyncThunk<TodoListResponseDto[]>('todolists/fetchTodoLists', async () => {
+    return await TodoService.getTodoLists();
 });
 
 export const addTodo = createAsyncThunk<Todo, Todo>('todos/addTodo', async (todo) => {
-    const newTodo = await TodoService.addTodo(todo);
-    return newTodo;
+    return await TodoService.addTodo(todo);
 });
 
 export const updateTodo = createAsyncThunk<Todo, Todo>('todos/updateTodo', async (todo) => {
-    const updatedTodo = await TodoService.updateTodo(todo);
-    return updatedTodo;
+    return await TodoService.updateTodo(todo);
 });
 
 export const deleteTodo = createAsyncThunk<number, number>('todos/deleteTodo', async (id) => {
@@ -71,7 +67,7 @@ const todoSlice = createSlice({
                 state.loading = true;
                 state.error = null;
             })
-            .addCase(fetchTodoLists.fulfilled, (state, action: PayloadAction<TodoList[]>) => {
+            .addCase(fetchTodoLists.fulfilled, (state, action: PayloadAction<TodoListResponseDto[]>) => {
                 state.loading = false;
                 state.todoLists = action.payload;
             })

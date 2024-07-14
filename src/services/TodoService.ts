@@ -9,8 +9,11 @@ export interface Todo {
     tags?: string[];
 };
 
-export interface TodoList {
+export interface TodoListResponseDto {
     id: string;
+    listName: string;
+};
+export interface TodoListRequestDto {
     listName: string;
 };
 
@@ -22,9 +25,9 @@ class TodoService {
             baseURL: 'https://66903fe0c0a7969efd9b8f8b.mockapi.io/api/todo',
         });
     }
-    getTodoLists = async (): Promise<TodoList[]> => {
+    getTodoLists = async (): Promise<TodoListResponseDto[]> => {
         try {
-            const response = await this.api.get<TodoList[]>('/lists');
+            const response = await this.api.get<TodoListResponseDto[]>('/lists');
             return response.data;
         } catch (error) {
             console.error('Error fetching todo lists:', error);
@@ -42,9 +45,9 @@ class TodoService {
         }
     }
 
-    addList = async (list: TodoList): Promise<TodoList> => {
+    addList = async (list: TodoListResponseDto): Promise<TodoListResponseDto> => {
         try {
-            const response = await this.api.post<TodoList>('/item', list);
+            const response = await this.api.post<TodoListResponseDto>('/item', list);
             return response.data;
         } catch (error) {
             console.error('Error adding todo:', error);
