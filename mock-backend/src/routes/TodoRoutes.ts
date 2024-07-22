@@ -61,7 +61,7 @@ router.delete('/lists/:listId', (req, res) => {
     if (listIndex !== -1) {
         todoLists.splice(listIndex, 1);
         writeFileSync(todoListsPath, JSON.stringify(todoLists, null, 2));
-        res.status(204).send();
+        res.status(200).json({ deletedListId: listId });
     } else {
         res.status(404).send('List not found');
     }

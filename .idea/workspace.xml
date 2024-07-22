@@ -5,60 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5246286f-f815-41b9-878c-7d1de49aa826" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/todo-app-main/src/components/ToDo/lists/EditListItemForm.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/todo-app-main/src/utils/utils.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mock-backend/.dockerignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mock-backend/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/todo-app-main/.dockerignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/todo-app-main/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/todo-app-main/src/app/App.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/todo-app-main/src/app/context/ThemeContext.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/todo-app-main/src/app/style/themes.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/todo-app-main/src/components/themeSwitcher/ThemeSwitcher.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mock-backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/mock-backend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mock-backend/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/mock-backend/src/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mock-backend/src/mock-data/todo-items-mock-response.json" beforeDir="false" afterPath="$PROJECT_DIR$/mock-backend/src/mock-data/todo-items-mock-response.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mock-backend/src/mock-data/todo-lists-mock-response.json" beforeDir="false" afterPath="$PROJECT_DIR$/mock-backend/src/mock-data/todo-lists-mock-response.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mock-backend/src/routes/TodoRoutes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/mock-backend/src/routes/TodoRoutes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-app-main/.next/cache/webpack/client-development/0.pack.gz" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-main/.next/cache/webpack/client-development/0.pack.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-app-main/.next/cache/webpack/client-development/1.pack.gz" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-main/.next/cache/webpack/client-development/1.pack.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-app-main/.next/cache/webpack/client-development/10.pack.gz" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-main/.next/cache/webpack/client-development/10.pack.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-app-main/.next/cache/webpack/client-development/11.pack.gz" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-main/.next/cache/webpack/client-development/11.pack.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-app-main/.next/cache/webpack/client-development/12.pack.gz" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-main/.next/cache/webpack/client-development/12.pack.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-app-main/.next/cache/webpack/client-development/13.pack.gz" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-main/.next/cache/webpack/client-development/13.pack.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-app-main/.next/cache/webpack/client-development/14.pack.gz" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-main/.next/cache/webpack/client-development/14.pack.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-app-main/.next/cache/webpack/client-development/2.pack.gz" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-main/.next/cache/webpack/client-development/2.pack.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-app-main/.next/cache/webpack/client-development/3.pack.gz" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-main/.next/cache/webpack/client-development/3.pack.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-app-main/.next/cache/webpack/client-development/4.pack.gz" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-main/.next/cache/webpack/client-development/4.pack.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-app-main/.next/cache/webpack/client-development/5.pack.gz" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-main/.next/cache/webpack/client-development/5.pack.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-app-main/.next/cache/webpack/client-development/6.pack.gz" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-main/.next/cache/webpack/client-development/6.pack.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-app-main/.next/cache/webpack/client-development/7.pack.gz" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-main/.next/cache/webpack/client-development/7.pack.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-app-main/.next/cache/webpack/client-development/8.pack.gz" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-main/.next/cache/webpack/client-development/8.pack.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-app-main/.next/cache/webpack/client-development/9.pack.gz" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-main/.next/cache/webpack/client-development/9.pack.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-app-main/.next/cache/webpack/client-development/index.pack.gz" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-main/.next/cache/webpack/client-development/index.pack.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-app-main/.next/cache/webpack/client-development/index.pack.gz.old" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-main/.next/cache/webpack/client-development/index.pack.gz.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-app-main/.next/cache/webpack/server-development/0.pack.gz" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-main/.next/cache/webpack/server-development/0.pack.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-app-main/.next/cache/webpack/server-development/1.pack.gz" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-main/.next/cache/webpack/server-development/1.pack.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-app-main/.next/cache/webpack/server-development/10.pack.gz" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-main/.next/cache/webpack/server-development/10.pack.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-app-main/.next/cache/webpack/server-development/11.pack.gz" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-main/.next/cache/webpack/server-development/11.pack.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-app-main/.next/cache/webpack/server-development/2.pack.gz" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-main/.next/cache/webpack/server-development/2.pack.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-app-main/.next/cache/webpack/server-development/3.pack.gz" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-main/.next/cache/webpack/server-development/3.pack.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-app-main/.next/cache/webpack/server-development/4.pack.gz" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-main/.next/cache/webpack/server-development/4.pack.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-app-main/.next/cache/webpack/server-development/5.pack.gz" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-main/.next/cache/webpack/server-development/5.pack.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-app-main/.next/cache/webpack/server-development/6.pack.gz" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-main/.next/cache/webpack/server-development/6.pack.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-app-main/.next/cache/webpack/server-development/7.pack.gz" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-main/.next/cache/webpack/server-development/7.pack.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-app-main/.next/cache/webpack/server-development/8.pack.gz" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-main/.next/cache/webpack/server-development/8.pack.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-app-main/.next/cache/webpack/server-development/9.pack.gz" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-main/.next/cache/webpack/server-development/9.pack.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-app-main/.next/cache/webpack/server-development/index.pack.gz" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-main/.next/cache/webpack/server-development/index.pack.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-app-main/.next/cache/webpack/server-development/index.pack.gz.old" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-main/.next/cache/webpack/server-development/index.pack.gz.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-app-main/.next/server/next-font-manifest.js" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-main/.next/server/next-font-manifest.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-app-main/.next/server/next-font-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-main/.next/server/next-font-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-app-main/.next/server/server-reference-manifest.js" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-main/.next/server/server-reference-manifest.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-app-main/.next/server/server-reference-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-main/.next/server/server-reference-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-app-main/.next/trace" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-main/.next/trace" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-app-main/src/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-main/src/app/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-app-main/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-main/src/app/layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/todo-app-main/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-main/src/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-app-main/src/components/ToDo/EditTodoItemForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-main/src/components/ToDo/items/EditTodoItemForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-app-main/src/components/ToDo/ListItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-main/src/components/ToDo/lists/ListItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-app-main/src/components/ToDo/PriorityMarker.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-main/src/components/ToDo/share/PriorityMarker.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-app-main/src/components/ToDo/TodoControls.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-main/src/components/ToDo/share/TodoControls.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-app-main/src/components/ToDo/TodoItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-main/src/components/ToDo/items/TodoItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-app-main/src/components/ToDo/TodoItemForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-main/src/components/ToDo/items/TodoItemForm.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/todo-app-main/src/components/ToDo/TodoList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-main/src/components/ToDo/TodoList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-app-main/src/components/ToDo/TodoListForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-main/src/components/ToDo/lists/TodoListForm.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/todo-app-main/src/components/ToDo/TodoLists.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-main/src/components/ToDo/TodoLists.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-app-main/src/components/ToDo/controls.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-main/src/components/ToDo/share/controls.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-app-main/src/components/ToDo/items/EditTodoItemForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-main/src/components/ToDo/items/EditTodoItemForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-app-main/src/components/ToDo/items/TodoItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-main/src/components/ToDo/items/TodoItem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-app-main/src/components/ToDo/items/TodoItemForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-main/src/components/ToDo/items/TodoItemForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-app-main/src/components/ToDo/lists/EditListItemForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-main/src/components/ToDo/lists/EditListItemForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-app-main/src/components/ToDo/lists/ListItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-main/src/components/ToDo/lists/ListItem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-app-main/src/components/clocks/DateTimeDisplay.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-main/src/components/clocks/DateTimeDisplay.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/todo-app-main/src/services/TodoService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-main/src/services/TodoService.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/todo-app-main/src/store/todoSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-main/src/store/todoSlice.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/todo-app-main/src/types/dtos.ts" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-main/src/types/dtos.ts" afterDir="false" />
@@ -75,6 +46,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -84,9 +56,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2jVw9QyMc0NjnWmVupluPxNs1YF" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -99,26 +71,28 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/mortal/dev/web_proj/react_proj/todo-app/todo-app-main/src/components/ToDo/lists",
+    "last_opened_file_path": "E:/dev/srcs/todo-app/mock-backend",
+    "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "/home/mortal/dev/web_proj/react_proj/todo-app/mock-backend/node_modules/typescript/lib",
+    "ts.external.directory.path": "E:\\dev\\srcs\\todo-app\\mock-backend\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\dev\srcs\todo-app\mock-backend" />
       <recent name="$PROJECT_DIR$/todo-app-main/src/components/ToDo/lists" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\dev\srcs\todo-app\todo-app-main\src\app" />
       <recent name="$PROJECT_DIR$/todo-app-main/src/components/ToDo" />
       <recent name="$PROJECT_DIR$/todo-app-main/src/components/ToDo/lists" />
       <recent name="$PROJECT_DIR$/todo-app-main/src/components/ToDo/items" />
       <recent name="$PROJECT_DIR$/todo-app-main/src/components/ToDo/share" />
-      <recent name="E:\dev\srcs\todo-app" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -140,6 +114,7 @@
       <workItem from="1721485403588" duration="1177000" />
       <workItem from="1721498266508" duration="21658000" />
       <workItem from="1721605216611" duration="7119000" />
+      <workItem from="1721644903930" duration="27238000" />
     </task>
     <servers />
   </component>

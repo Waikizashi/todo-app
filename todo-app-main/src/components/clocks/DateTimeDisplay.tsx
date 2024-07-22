@@ -29,10 +29,10 @@ const DateTimeDisplay: React.FC = () => {
         <Container>
             <Row className="justify-content-center">
                 <Col xs="auto">
-                    <h5>{currentTime.format(dateFormat)}</h5>
+                    <h5 className='m-0'>{currentTime.format(dateFormat)}</h5>
                 </Col>
                 <Col xs="auto">
-                    <h5>{currentTime.format(timeFormat)}</h5>
+                    <h5 className='m-0'>{currentTime.format(timeFormat)}</h5>
                 </Col>
             </Row>
         </Container>

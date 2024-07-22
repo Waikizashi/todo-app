@@ -22,8 +22,8 @@ const TodoItemForm: React.FC<TodoAddFormProps> = ({ sortDESC, onAddClick, onSort
         <div className="d-flex justify-content-between align-items-center mb-2">
             <h3 className=''>{listName}</h3>
             <div className="d-flex align-items-center justify-content-between">
-                <Button color='primary' className="rounded-3 px-2 mx-2">
-                    <AddIcon onClick={onAddClick}/>
+                <Button onClick={onAddClick} color='primary' className="rounded-3 px-2 mx-2">
+                    <AddIcon className=''/>
                 </Button>
                 <DropdownButton
                     title={<FilterAltIcon />}

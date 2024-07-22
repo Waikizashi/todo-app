@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ../mock-backend
+      dockerfile: Dockerfile
+    ports:
+      - "5443:5443"
+    volumes:
+      - ../mock-backend:/app
+    environment:
+      NODE_ENV: development
+
+  frontend:
+    build:
+      context: ../todo-app-main
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ../todo-app-main:/app
+    environment:
+      NODE_ENV: development

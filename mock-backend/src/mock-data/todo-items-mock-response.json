@@ -1,44 +1,12 @@
 [
   {
-    "id": 1,
-    "text": "Learn TypeScript",
-    "completed": true,
-    "priority": "medium",
-    "dueDate": "2024-08-01",
-    "tags": [
-      "education",
-      "programming"
-    ]
-  },
-  {
-    "id": 2,
-    "text": "Buy groceries",
-    "completed": true,
-    "priority": "medium",
-    "dueDate": "2024-07-15",
-    "tags": [
-      "shopping"
-    ]
-  },
-  {
     "id": 6,
     "text": "Clean the house",
     "completed": false,
-    "priority": "low",
-    "dueDate": "2024-07-22",
+    "priority": "medium",
+    "dueDate": "2024-07-27",
     "tags": [
       "household"
-    ]
-  },
-  {
-    "id": 8,
-    "text": "Practice piano",
-    "completed": false,
-    "priority": "medium",
-    "dueDate": "2024-07-28",
-    "tags": [
-      "hobbies",
-      "music"
     ]
   },
   {
@@ -55,7 +23,7 @@
   {
     "id": 11,
     "text": "Read a book",
-    "completed": false,
+    "completed": true,
     "priority": "medium",
     "dueDate": "2024-08-05",
     "tags": [
@@ -77,7 +45,7 @@
   {
     "id": 14,
     "text": "Organize desk",
-    "completed": true,
+    "completed": false,
     "priority": "low",
     "dueDate": "2024-07-20",
     "tags": [
@@ -88,7 +56,7 @@
   {
     "id": 15,
     "text": "Update resume",
-    "completed": false,
+    "completed": true,
     "priority": "high",
     "dueDate": "2024-08-02",
     "tags": [
@@ -130,7 +98,7 @@
   {
     "id": 21,
     "text": "Schedule doctor appointment",
-    "completed": true,
+    "completed": false,
     "priority": "high",
     "dueDate": "2024-07-24",
     "tags": [
@@ -141,23 +109,12 @@
   {
     "id": 22,
     "text": "Learn a new recipe",
-    "completed": true,
+    "completed": false,
     "priority": "medium",
     "dueDate": "2024-07-27",
     "tags": [
       "cooking",
       "hobbies"
-    ]
-  },
-  {
-    "id": 23,
-    "text": "Do the laundry",
-    "completed": true,
-    "priority": "low",
-    "dueDate": "2024-07-18",
-    "tags": [
-      "household",
-      "chores"
     ]
   },
   {
@@ -180,6 +137,16 @@
     "tags": [
       "household",
       "cleaning"
+    ]
+  },
+  {
+    "id": 26,
+    "text": "new task 123",
+    "completed": false,
+    "priority": "medium",
+    "dueDate": "2024-07-25",
+    "tags": [
+      ""
     ]
   }
 ]

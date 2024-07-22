@@ -20,7 +20,7 @@ const TodoItem: React.FC<TodoItemProps> = ({ item, onUpdate, onDelete, onEdit })
         <ListGroup.Item
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
-            className={clsx("card d-flex justify-content-start align-items-center position-relative my-1 shadow", { ' bg-body-tertiary': isHovered })}
+            className={clsx("card d-flex justify-content-start align-items-center position-relative my-2 item-shadow", { 'hovered-item': isHovered })}
         >
             <Row className="w-100 align-items-center">
                 <Col xs={1} className="text-center">

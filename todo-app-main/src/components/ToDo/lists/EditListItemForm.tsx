@@ -6,10 +6,10 @@ interface EditListItemFormProps {
     show: boolean;
     onHide: () => void;
     list: TodoListResponseDto;
-    onSave: (updatedList: TodoListResponseDto) => void;
+    onUpdate: (updatedList: TodoListResponseDto) => void;
 }
 
-const EditListItemForm: React.FC<EditListItemFormProps> = ({ show, onHide, list, onSave }) => {
+const EditListItemForm: React.FC<EditListItemFormProps> = ({ show, onHide, list, onUpdate }) => {
     const [listName, setListName] = useState(list.listName);
 
     useEffect(() => {
@@ -18,7 +18,7 @@ const EditListItemForm: React.FC<EditListItemFormProps> = ({ show, onHide, list,
 
     const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
-        onSave({
+        onUpdate({
             ...list,
             listName: listName,
         });

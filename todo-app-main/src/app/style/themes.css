@@ -1,0 +1,105 @@
+body.light-mode{
+    background-color: #ffffff;
+    color: #212529;
+}
+
+body.dark-mode{
+    background-color: #212529;
+    color: #ffffff;
+}
+
+body.light-mode .card{
+    background-color: #ffffff;
+    color: #212529;
+}
+
+body.dark-mode .card{
+    background-color: #212529;
+    color: #ffffff;
+}
+
+body.light-mode .card-header{
+    background-color: #ffffff;
+    color: #212529;
+}
+
+body.dark-mode .card-header{
+    background-color: #212529;
+    color: #ffffff;
+}
+
+body.light-mode .card-body{
+    background-color: #ffffff;
+    color: #212529;
+}
+
+body.dark-mode .card-body{
+    background-color: #212529;
+    color: #ffffff;
+}
+
+body.light-mode .modal-dialog{
+    background-color: #ffffff;
+    color: #212529;
+}
+
+body.dark-mode .modal-dialog{
+    background-color: #212529;
+    color: #ffffff;
+}
+
+body.light-mode .modal-content{
+    background-color: #ffffff;
+    color: #212529;
+}
+
+body.dark-mode .modal-content{
+    background-color: #212529;
+    color: #ffffff;
+}
+
+body.light-mode .modal-header{
+    background-color: #ffffff;
+    color: #212529;
+}
+
+body.dark-mode .modal-header{
+    background-color: #212529;
+    color: #ffffff;
+}
+
+body.light-mode .modal-body{
+    background-color: #ffffff;
+    color: #212529;
+}
+
+body.dark-mode .modal-body{
+    background-color: #212529;
+    color: #ffffff;
+}
+
+body.light-mode .item-shadow {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .item-shadow {
+    box-shadow: 0 8px 16px rgba(56, 56, 56, 0.8);
+}
+
+body.light-mode .hovered-item {
+    background-color: #f8f9fa;
+    color: black;
+}
+
+body.dark-mode .hovered-item {
+    background-color: #2e343a;
+    color: white;
+}
+
+body.light-mode h1, body.light-mode h2, body.light-mode h3, body.light-mode h4, body.light-mode h5, body.light-mode h6 {
+    color: #212529;
+}
+
+body.dark-mode h1, body.dark-mode h2, body.dark-mode h3, body.dark-mode h4, body.dark-mode h5, body.dark-mode h6 {
+    color: #ffffff;
+}

@@ -5,18 +5,16 @@ import { RootState, AppDispatch } from '@/store/store';
 import TodoItem from './items/TodoItem';
 import EditTodoItemForm from './items/EditTodoItemForm';
 import TodoItemForm from './items/TodoItemForm';
-import {TodoRequestDto, TodoResponseDto} from "@/types/dtos";
+import {TodoCreateRequestDto, TodoResponseDto} from "@/types/dtos";
 import {priorityToEnum, Sorting, SortingType} from '@/types/sorting';
 import {SelectedList} from "@/types/store_types";
+import {addTodo, deleteTodo, updateTodo} from "@/store/todoSlice";
 
 interface TodoListProps {
     list: SelectedList;
-    onAddTodo: (newTodo: TodoRequestDto) => void;
-    onUpdateTodo: (todo: TodoResponseDto) => void;
-    onDeleteTodo: (id: string) => void;
 }
 
-const TodoList: React.FC<TodoListProps> = ({ list, onAddTodo, onUpdateTodo, onDeleteTodo }) => {
+const TodoList: React.FC<TodoListProps> = ({ list }) => {
     const dispatch = useDispatch<AppDispatch>();
     const { todos, loading, error, selectedList } = useSelector((state: RootState) => state.todos);
     const {COMPLETED, PRIORITY, DUEDATE} = SortingType;
@@ -30,19 +28,16 @@ const TodoList: React.FC<TodoListProps> = ({ list, onAddTodo, onUpdateTodo, onDe
     }, [todos]);
 
     useEffect(() => {
-        sort(sorting);
-    }, [sorting, todos])
-
-    const handleAddTodo = (newTodo: TodoResponseDto) => {
-        onAddTodo({todo: newTodo, listId: list.listId});
-    };
+        sortTodos(sorting);
+    }, [sorting, todos]);
 
     const handleUpdateTodo = (updatedTodo: TodoResponseDto) => {
-        onUpdateTodo(updatedTodo);
+        dispatch(updateTodo(updatedTodo));
+        setCurrentTodo(null)
     };
 
     const handleDeleteTodo = (id: string) => {
-        onDeleteTodo(id);
+        dispatch(deleteTodo(id));
     };
 
     const handleEditTodo = (todo: TodoResponseDto) => {
@@ -50,28 +45,28 @@ const TodoList: React.FC<TodoListProps> = ({ list, onAddTodo, onUpdateTodo, onDe
         setShowEditForm(true);
     };
 
-    const handleSaveTodo = (newTodo: TodoResponseDto) => {
-        handleUpdateTodo(newTodo);
+    const handleSaveTodo = (newTodo: TodoCreateRequestDto) => {
+        dispatch(addTodo(newTodo));
         setShowEditForm(false);
+        setCurrentTodo(null)
     };
 
     const handleAddClick = () => {
-        setCurrentTodo({ id: '0', text: '', completed: false, priority: 'low', dueDate: '', tags: [] });
+        setCurrentTodo(null);
         setShowEditForm(true);
     };
 
     const handleSortChange = (sortingType: SortingType | null) => {
-        if (sorting.type === sortingType){
-            setSorting({type: sortingType, desc: !sorting.desc})
-        } else{
-            setSorting({type: sortingType, desc: true})
+        if (sorting.type === sortingType) {
+            setSorting({ type: sortingType, desc: !sorting.desc });
+        } else {
+            setSorting({ type: sortingType, desc: true });
         }
-        sort(sorting)
     };
 
-    const sort = (sorting: Sorting) => {
+    const sortTodos = (sorting: Sorting) => {
         if (sorting.type !== null) {
-            const sorted = [...sortedTodos].sort((a, b) => {
+            const sorted = [...todos].sort((a, b) => {
                 let comparison = 0;
                 if (sorting.type === COMPLETED) {
                     comparison = Number(a.completed) - Number(b.completed);
@@ -80,13 +75,18 @@ const TodoList: React.FC<TodoListProps> = ({ list, onAddTodo, onUpdateTodo, onDe
                 } else if (sorting.type === DUEDATE) {
                     comparison = (a.dueDate || '').localeCompare(b.dueDate || '');
                 }
-
                 return sorting.desc ? -comparison : comparison;
             });
             setSortedTodos(sorted);
+        } else {
+            setSortedTodos(todos);
         }
     };
 
+    const handleHideEditForm = () => {
+        setShowEditForm(false);
+        setCurrentTodo(null);
+    };
 
     return (
         <Card.Body className="mx-2" style={{ overflowY: 'auto' }}>
@@ -110,15 +110,14 @@ const TodoList: React.FC<TodoListProps> = ({ list, onAddTodo, onUpdateTodo, onDe
                     </Card.Body>
                 </Col>
             </Row>
-            {currentTodo && (
                 <EditTodoItemForm
+                    selectedList={selectedList}
                     show={showEditForm}
-                    onHide={() => setShowEditForm(false)}
-                    todo={currentTodo}
+                    onHide={handleHideEditForm}
+                    todo={currentTodo ? currentTodo : null}
                     onSave={handleSaveTodo}
                     onUpdate={handleUpdateTodo}
                 />
-            )}
         </Card.Body>
     );
 };

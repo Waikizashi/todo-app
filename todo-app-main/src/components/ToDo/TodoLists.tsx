@@ -1,45 +1,43 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {ListGroup, Row, Col, Card} from 'react-bootstrap';
 import {SelectedList} from "@/types/store_types";
-import {TodoListRequestDto, TodoListResponseDto, TodoResponseDto} from "@/types/dtos";
+import {TodoListRequestDto, TodoListResponseDto} from "@/types/dtos";
 import TodoListForm from "@/components/ToDo/lists/TodoListForm";
-import {addTodoList} from "@/store/todoSlice";
+import {addTodoList, deleteTodoList, updateTodoList} from "@/store/todoSlice";
 import {useDispatch, useSelector} from "react-redux";
 import {AppDispatch, RootState} from "@/store/store";
-import TodoControls from "@/components/ToDo/share/TodoControls";
 import ListItem from "@/components/ToDo/lists/ListItem";
-import EditTodoItemForm from "@/components/ToDo/items/EditTodoItemForm";
 import EditListItemForm from "@/components/ToDo/lists/EditListItemForm";
 
 interface TodoListsProps {
-    lists: TodoListResponseDto[];
     onSelectList: (selectedList: SelectedList) => void;
 }
 
-const TodoLists: React.FC<TodoListsProps> = ({ lists, onSelectList }) => {
+const TodoLists: React.FC<TodoListsProps> = ({ onSelectList }) => {
     const dispatch = useDispatch<AppDispatch>();
-    const { selectedList, todos, todoLists, loading, error } = useSelector((state: RootState) => state.todos);
+    const {todoLists} = useSelector((state: RootState) => state.todos);
     const [currentList, setCurrentList] = useState<TodoListResponseDto | null>(null);
     const [showEditForm, setShowEditForm] = useState(false);
+
+    useEffect(()=>{
+
+    }, [todoLists])
 
     const handleAddTodoList = (newTodoList: TodoListRequestDto) => {
         dispatch(addTodoList(newTodoList));
     };
     const handleDeleteTodoList = (listId: string) => {
-        // dispatch(deleteTodoList(listId));
+        dispatch(deleteTodoList(listId));
     };
-    const handleEditTodoList = (newTodoList: TodoListRequestDto) => {
-        // dispatch(addTodoList(newTodoList));
+    const handleUpdateTodoList = (newTodoList: TodoListRequestDto) => {
+        dispatch(updateTodoList(newTodoList));
     };
-    const handleEditTodo = (list: TodoListResponseDto) => {
-        setCurrentList(list);
+    const handleEditTodoList = (todoList: SelectedList) => {
+        setCurrentList(todoList);
         setShowEditForm(true);
     };
-    const handleUpdateList = (updatedList: TodoListRequestDto) => {
-        onUpdateList(updatedList);
-    };
     const handleSaveList = (updatedList: TodoListResponseDto) => {
-        handleUpdateList(updatedList);
+        handleUpdateTodoList(updatedList);
         setShowEditForm(false);
     };
     return (
@@ -48,7 +46,7 @@ const TodoLists: React.FC<TodoListsProps> = ({ lists, onSelectList }) => {
                 <Col md={{ span: 6, offset: 3 }}>
                     <TodoListForm onAdd={handleAddTodoList}/>
                     <ListGroup>
-                        {lists.map((list, index) => (
+                        {todoLists.map((list, index) => (
                             <ListItem
                                 item={list}
                                 onListDelete={handleDeleteTodoList}
@@ -65,7 +63,7 @@ const TodoLists: React.FC<TodoListsProps> = ({ lists, onSelectList }) => {
                     show={showEditForm}
                     onHide={() => setShowEditForm(false)}
                     list={currentList}
-                    onSave={handleSaveList}
+                    onUpdate={handleSaveList}
                 />
             )}
         </Card.Body>

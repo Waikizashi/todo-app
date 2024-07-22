@@ -1,5 +1,11 @@
 import axios, { AxiosInstance } from 'axios';
-import {TodoListRequestDto, TodoListResponseDto, TodoResponseDto} from "@/types/dtos";
+import {
+    TodoCreateRequestDto,
+    TodoListDeleteResponseDto,
+    TodoListRequestDto,
+    TodoListResponseDto,
+    TodoResponseDto
+} from "@/types/dtos";
 
 class TodoService {
     private api: AxiosInstance;
@@ -38,9 +44,27 @@ class TodoService {
             throw error;
         }
     }
-    addTodo = async (todo: TodoResponseDto, listId: number): Promise<TodoResponseDto> => {
+    updateTodoList = async (list: TodoListRequestDto): Promise<TodoListResponseDto> => {
         try {
-            const response = await this.api.post<TodoResponseDto>(`/lists/${listId}`, todo);
+            const response = await this.api.put<TodoListResponseDto>(`/lists/${list.listId}`, list);
+            return response.data;
+        } catch (error) {
+            console.error('Error adding todo list:', error);
+            throw error;
+        }
+    }
+    deleteTodoList = async (listId: string): Promise<TodoListDeleteResponseDto> => {
+        try {
+            const response = await this.api.delete<TodoListDeleteResponseDto>(`/lists/${listId}`);
+            return response.data;
+        } catch (error) {
+            console.error('Error adding todo list:', error);
+            throw error;
+        }
+    }
+    addTodo = async (newTodo: TodoCreateRequestDto): Promise<TodoResponseDto> => {
+        try {
+            const response = await this.api.post<TodoResponseDto>(`/lists/${newTodo.listId}`, newTodo.todo);
             return response.data;
         } catch (error) {
             console.error('Error adding todo:', error);
@@ -58,9 +82,10 @@ class TodoService {
         }
     }
 
-    deleteTodo = async (id: string): Promise<void> => {
+    deleteTodo = async (id: string): Promise<TodoListDeleteResponseDto> => {
         try {
-            await this.api.delete(`/item/${id}`);
+            const response = await this.api.delete<TodoListDeleteResponseDto>(`/item/${id}`);
+            return response.data;
         } catch (error) {
             console.error('Error deleting todo:', error);
             throw error;
