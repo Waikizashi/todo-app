@@ -12,10 +12,11 @@ export interface TodoListResponseDto {
     listName: string;
 };
 export interface TodoListRequestDto {
+    listId: string;
     listName: string;
 };
 
 export interface TodoRequestDto {
     todo: TodoResponseDto,
-    listId: number
+    listId: string
 }

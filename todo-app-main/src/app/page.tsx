@@ -19,7 +19,7 @@ import {
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import FeaturedPlayListIcon from '@mui/icons-material/FeaturedPlayList';
 import {SelectedList} from "@/types/store_types";
-import {TodoListRequestDto, TodoResponseDto} from "@/types/dtos";
+import {TodoListRequestDto, TodoRequestDto, TodoResponseDto} from "@/types/dtos";
 import DateTimeDisplay from "@/components/clocks/DateTimeDisplay";
 
 export default function Home() {
@@ -43,9 +43,9 @@ export default function Home() {
   const handleAddTodoList = (newTodoList: TodoListRequestDto) => {
     dispatch(addTodoList(newTodoList));
   };
-  const handleAddTodo = (newTodo: TodoResponseDto, listId: number) => {
+  const handleAddTodo = (newTodo: TodoRequestDto) => {
 
-    dispatch(addTodo({todo: newTodo, listId: listId}));
+    dispatch(addTodo(newTodo));
   };
 
   const handleUpdateTodo = (updatedTodo: TodoResponseDto) => {

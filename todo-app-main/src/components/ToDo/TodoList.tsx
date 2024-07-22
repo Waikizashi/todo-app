@@ -2,20 +2,21 @@ import React, { useState, useEffect } from 'react';
 import { ListGroup, Row, Col, Card, Spinner, Alert } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState, AppDispatch } from '@/store/store';
-import TodoItem from './TodoItem';
-import EditTodoItemForm from './EditTodoItemForm';
-import TodoItemForm from './TodoItemForm';
-import { TodoResponseDto } from "@/types/dtos";
+import TodoItem from './items/TodoItem';
+import EditTodoItemForm from './items/EditTodoItemForm';
+import TodoItemForm from './items/TodoItemForm';
+import {TodoRequestDto, TodoResponseDto} from "@/types/dtos";
 import {priorityToEnum, Sorting, SortingType} from '@/types/sorting';
+import {SelectedList} from "@/types/store_types";
 
 interface TodoListProps {
-    listName: string;
-    onAddTodo: (todo: TodoResponseDto, listId: number) => void;
+    list: SelectedList;
+    onAddTodo: (newTodo: TodoRequestDto) => void;
     onUpdateTodo: (todo: TodoResponseDto) => void;
     onDeleteTodo: (id: string) => void;
 }
 
-const TodoList: React.FC<TodoListProps> = ({ listName, onAddTodo, onUpdateTodo, onDeleteTodo }) => {
+const TodoList: React.FC<TodoListProps> = ({ list, onAddTodo, onUpdateTodo, onDeleteTodo }) => {
     const dispatch = useDispatch<AppDispatch>();
     const { todos, loading, error, selectedList } = useSelector((state: RootState) => state.todos);
     const {COMPLETED, PRIORITY, DUEDATE} = SortingType;
@@ -30,10 +31,10 @@ const TodoList: React.FC<TodoListProps> = ({ listName, onAddTodo, onUpdateTodo, 
 
     useEffect(() => {
         sort(sorting);
-    }, [sorting])
+    }, [sorting, todos])
 
-    const handleAddTodo = (newTodo: TodoResponseDto, listId: number) => {
-        onAddTodo(newTodo, listId);
+    const handleAddTodo = (newTodo: TodoResponseDto) => {
+        onAddTodo({todo: newTodo, listId: list.listId});
     };
 
     const handleUpdateTodo = (updatedTodo: TodoResponseDto) => {
@@ -49,8 +50,8 @@ const TodoList: React.FC<TodoListProps> = ({ listName, onAddTodo, onUpdateTodo, 
         setShowEditForm(true);
     };
 
-    const handleSaveTodo = (updatedTodo: TodoResponseDto) => {
-        handleUpdateTodo(updatedTodo);
+    const handleSaveTodo = (newTodo: TodoResponseDto) => {
+        handleUpdateTodo(newTodo);
         setShowEditForm(false);
     };
 
@@ -60,7 +61,7 @@ const TodoList: React.FC<TodoListProps> = ({ listName, onAddTodo, onUpdateTodo, 
     };
 
     const handleSortChange = (sortingType: SortingType | null) => {
-        if (sorting?.type === sortingType){
+        if (sorting.type === sortingType){
             setSorting({type: sortingType, desc: !sorting.desc})
         } else{
             setSorting({type: sortingType, desc: true})
@@ -69,7 +70,7 @@ const TodoList: React.FC<TodoListProps> = ({ listName, onAddTodo, onUpdateTodo, 
     };
 
     const sort = (sorting: Sorting) => {
-        if (sorting.type) {
+        if (sorting.type !== null) {
             const sorted = [...sortedTodos].sort((a, b) => {
                 let comparison = 0;
                 if (sorting.type === COMPLETED) {
@@ -91,7 +92,7 @@ const TodoList: React.FC<TodoListProps> = ({ listName, onAddTodo, onUpdateTodo, 
         <Card.Body className="mx-2" style={{ overflowY: 'auto' }}>
             <Row>
                 <Col md={{ span: 6, offset: 3 }}>
-                    <TodoItemForm sortDESC={sorting.desc} onAddClick={handleAddClick} onSortChange={handleSortChange} listName={listName} />
+                    <TodoItemForm sortDESC={sorting.desc} onAddClick={handleAddClick} onSortChange={handleSortChange} listName={list.listName} />
                     <Card.Body className='p-0'>
                         {loading && <Spinner animation="border" />}
                         {error && <Alert variant="danger">{error}</Alert>}
@@ -115,6 +116,7 @@ const TodoList: React.FC<TodoListProps> = ({ listName, onAddTodo, onUpdateTodo, 
                     onHide={() => setShowEditForm(false)}
                     todo={currentTodo}
                     onSave={handleSaveTodo}
+                    onUpdate={handleUpdateTodo}
                 />
             )}
         </Card.Body>

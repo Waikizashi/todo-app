@@ -1,8 +1,0 @@
-.todoControl {
-    cursor: pointer;
-    /*transition: .1s;*/
-}
-
-.todoControl:hover{
-    transform: scale(1.2);
-}

@@ -27,14 +27,14 @@ export const fetchTodoLists = createAsyncThunk<TodoListResponseDto[]>('todoLists
     return await TodoService.getTodoLists();
 });
 
-export const addTodoList = createAsyncThunk<TodoListResponseDto, TodoListRequestDto>('todoLists/fetchTodoLists', async (list) => {
+export const addTodoList = createAsyncThunk<TodoListResponseDto, TodoListRequestDto>('todoLists/addTodoLists', async (list) => {
     return await TodoService.addTodoList(list);
 });
-export const updateTodoList = createAsyncThunk<TodoListResponseDto, TodoListRequestDto>('todoLists/updateTodoLists', async (list) => {
-    return await TodoService.addTodoList(list);
+export const updateTodoList = createAsyncThunk<TodoListResponseDto[], TodoListRequestDto>('todoLists/updateTodoLists', async (list) => {
+    return await TodoService.updateTodoList(list);
 });
-export const deleteTodoList = createAsyncThunk<TodoListResponseDto, TodoListRequestDto>('todoLists/deleteTodoLists', async (list) => {
-    return await TodoService.addTodoList(list);
+export const deleteTodoList = createAsyncThunk<TodoListResponseDto, number>('todoLists/deleteTodoLists', async (listId) => {
+    return await TodoService.deleteTodoList(listId);
 });
 
 export const addTodo = createAsyncThunk<TodoResponseDto, TodoRequestDto>('todos/addTodo', async ({todo, listId}) => {
@@ -86,6 +86,14 @@ const todoSlice = createSlice({
             .addCase(fetchTodoLists.rejected, (state, action) => {
                 state.loading = false;
                 state.error = action.error.message || 'Failed to fetch todo lists';
+            })
+            .addCase(addTodoList.pending, (state) =>{
+                state.loading = true;
+                state.error = null;
+            })
+            .addCase(addTodoList.fulfilled, (state, action: PayloadAction<TodoListResponseDto>) =>{
+                state.loading = false;
+                state.todoLists.push(action.payload)
             })
             .addCase(addTodo.fulfilled, (state, action: PayloadAction<TodoResponseDto>) => {
                 state.todos.push(action.payload);

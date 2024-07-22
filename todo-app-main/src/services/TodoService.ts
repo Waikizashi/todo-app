@@ -40,7 +40,7 @@ class TodoService {
     }
     addTodo = async (todo: TodoResponseDto, listId: number): Promise<TodoResponseDto> => {
         try {
-            const response = await this.api.post<TodoResponseDto>(`/item/${todo.id}`, todo);
+            const response = await this.api.post<TodoResponseDto>(`/lists/${listId}`, todo);
             return response.data;
         } catch (error) {
             console.error('Error adding todo:', error);
