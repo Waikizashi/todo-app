@@ -43,6 +43,30 @@ router.post('/lists', (req, res) => {
     res.status(201).json(newList);
 });
 
+router.put('/lists/:listId', (req, res) => {
+    const listId = req.params.listId;
+    const listIndex = todoLists.findIndex(list => list.listId === listId);
+    if (listIndex !== -1) {
+        todoLists[listIndex] = { ...todoLists[listIndex], ...req.body };
+        writeFileSync(todoListsPath, JSON.stringify(todoLists, null, 2));
+        res.json(todoLists[listIndex]);
+    } else {
+        res.status(404).send('List not found');
+    }
+});
+
+router.delete('/lists/:listId', (req, res) => {
+    const listId = req.params.listId;
+    const listIndex = todoLists.findIndex(list => list.listId === listId);
+    if (listIndex !== -1) {
+        todoLists.splice(listIndex, 1);
+        writeFileSync(todoListsPath, JSON.stringify(todoLists, null, 2));
+        res.status(204).send();
+    } else {
+        res.status(404).send('List not found');
+    }
+});
+
 
 router.get('/lists/:listId', (req, res) => {
     const listId = req.params.listId;

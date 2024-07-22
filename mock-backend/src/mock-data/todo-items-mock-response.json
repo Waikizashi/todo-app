@@ -2,9 +2,9 @@
   {
     "id": 1,
     "text": "Learn TypeScript",
-    "completed": false,
+    "completed": true,
     "priority": "medium",
-    "dueDate": "2023-08-01",
+    "dueDate": "2024-08-01",
     "tags": [
       "education",
       "programming"
@@ -15,19 +15,9 @@
     "text": "Buy groceries",
     "completed": true,
     "priority": "medium",
-    "dueDate": "2023-07-15",
+    "dueDate": "2024-07-15",
     "tags": [
       "shopping"
-    ]
-  },
-  {
-    "id": 4,
-    "text": "Plan vacation",
-    "completed": true,
-    "priority": "low",
-    "dueDate": "2023-08-01",
-    "tags": [
-      "travel"
     ]
   },
   {
@@ -35,7 +25,7 @@
     "text": "Clean the house",
     "completed": false,
     "priority": "low",
-    "dueDate": "2023-07-22",
+    "dueDate": "2024-07-22",
     "tags": [
       "household"
     ]
@@ -45,7 +35,7 @@
     "text": "Practice piano",
     "completed": false,
     "priority": "medium",
-    "dueDate": "2023-07-28",
+    "dueDate": "2024-07-28",
     "tags": [
       "hobbies",
       "music"
@@ -54,9 +44,9 @@
   {
     "id": 10,
     "text": "Fix the sink",
-    "completed": false,
+    "completed": true,
     "priority": "medium",
-    "dueDate": "2023-07-18",
+    "dueDate": "2024-07-18",
     "tags": [
       "household",
       "repair"
@@ -67,7 +57,7 @@
     "text": "Read a book",
     "completed": false,
     "priority": "medium",
-    "dueDate": "2023-08-05",
+    "dueDate": "2024-08-05",
     "tags": [
       "hobbies",
       "education"
@@ -78,7 +68,7 @@
     "text": "Go for a run",
     "completed": true,
     "priority": "low",
-    "dueDate": "2023-07-19",
+    "dueDate": "2024-07-19",
     "tags": [
       "health",
       "fitness"
@@ -89,7 +79,7 @@
     "text": "Organize desk",
     "completed": true,
     "priority": "low",
-    "dueDate": "2023-07-20",
+    "dueDate": "2024-07-20",
     "tags": [
       "household",
       "cleaning"
@@ -100,7 +90,7 @@
     "text": "Update resume",
     "completed": false,
     "priority": "high",
-    "dueDate": "2023-08-02",
+    "dueDate": "2024-08-02",
     "tags": [
       "work",
       "career"
@@ -109,9 +99,9 @@
   {
     "id": 16,
     "text": "Call mom",
-    "completed": false,
+    "completed": true,
     "priority": "medium",
-    "dueDate": "2023-07-21",
+    "dueDate": "2024-07-21",
     "tags": [
       "personal"
     ]
@@ -121,7 +111,7 @@
     "text": "Watch a movie",
     "completed": false,
     "priority": "low",
-    "dueDate": "2023-07-26",
+    "dueDate": "2024-07-26",
     "tags": [
       "leisure"
     ]
@@ -131,7 +121,7 @@
     "text": "Plan weekend trip",
     "completed": false,
     "priority": "medium",
-    "dueDate": "2023-07-29",
+    "dueDate": "2024-07-29",
     "tags": [
       "travel",
       "planning"
@@ -142,7 +132,7 @@
     "text": "Schedule doctor appointment",
     "completed": true,
     "priority": "high",
-    "dueDate": "2023-07-24",
+    "dueDate": "2024-07-24",
     "tags": [
       "health",
       "personal"
@@ -153,7 +143,7 @@
     "text": "Learn a new recipe",
     "completed": true,
     "priority": "medium",
-    "dueDate": "2023-07-27",
+    "dueDate": "2024-07-27",
     "tags": [
       "cooking",
       "hobbies"
@@ -164,7 +154,7 @@
     "text": "Do the laundry",
     "completed": true,
     "priority": "low",
-    "dueDate": "2023-07-18",
+    "dueDate": "2024-07-18",
     "tags": [
       "household",
       "chores"
@@ -175,7 +165,7 @@
     "text": "Prepare for meeting",
     "completed": true,
     "priority": "high",
-    "dueDate": "2023-07-31",
+    "dueDate": "2024-07-31",
     "tags": [
       "work",
       "meeting"
@@ -186,7 +176,7 @@
     "text": "Clean the garage",
     "completed": false,
     "priority": "low",
-    "dueDate": "2023-08-03",
+    "dueDate": "2024-08-03",
     "tags": [
       "household",
       "cleaning"
